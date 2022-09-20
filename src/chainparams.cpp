@@ -79,7 +79,7 @@ public:
         consensus.nSubsidyHalvingInterval = 500000;
         consensus.BIP16Height = 1; // fixed
         consensus.BIP34Height = 1;
-        consensus.BIP34Hash = uint256S("0x000006ed70a3f2a53f41673920a2673e3cc9298047d683923adc4a7269beb62e"); // 0
+        consensus.BIP34Hash = uint256S("0x00000c11d8beef40deecddc99e42547ba123c146123978afdf35ab2869d1ab09"); // 0
         consensus.BIP65Height = 1;
         consensus.BIP66Height = 1;
         consensus.powLimit = uint256S("0x3fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
@@ -107,7 +107,7 @@ public:
 		consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000100001"); // 0
 
         // By default assume that the signatures in ancestors of this block are valid.
-		consensus.defaultAssumeValid = uint256S("0x000006ed70a3f2a53f41673920a2673e3cc9298047d683923adc4a7269beb62e"); // 0
+		consensus.defaultAssumeValid = uint256S("0x00000c11d8beef40deecddc99e42547ba123c146123978afdf35ab2869d1ab09"); // 0
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -121,10 +121,12 @@ public:
         nDefaultPort = 9661;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1663630961, 46058, 0x1e3fffff, 1, 10 * COIN);
+        genesis = CreateGenesisBlock(1663630961, 72698, 0x1e3fffff, 1, 10 * COIN);
+		
 		consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x000006ed70a3f2a53f41673920a2673e3cc9298047d683923adc4a7269beb62e"));
-        assert(genesis.hashMerkleRoot == uint256S("0x79035b31cd59c2ec2125774d48ac1ab327f97a213f2f43102d62f3b29e822492"));
+		
+        assert(consensus.hashGenesisBlock == uint256S("0x00000c11d8beef40deecddc99e42547ba123c146123978afdf35ab2869d1ab09"));
+        assert(genesis.hashMerkleRoot == uint256S("0x6b0912c793a70ba4c46bd3e43e03387fb5c9616e232f12bd5eb5c59d4586f1db"));
 
         //vSeeds.emplace_back("seed-main.apixcoin.info");		
 
@@ -144,16 +146,16 @@ public:
 
         checkpointData = {
             {
-                {0, uint256S("0x000006ed70a3f2a53f41673920a2673e3cc9298047d683923adc4a7269beb62e")},
+                {0, uint256S("0x00000c11d8beef40deecddc99e42547ba123c146123978afdf35ab2869d1ab09")},
             }
         };
 
 
 
         chainTxData = ChainTxData{
-            // Data as of block 0x000006ed70a3f2a53f41673920a2673e3cc9298047d683923adc4a7269beb62e (height 0).
+            // Data as of block 0x00000c11d8beef40deecddc99e42547ba123c146123978afdf35ab2869d1ab09 (height 0).
             1663630961, // * UNIX timestamp of last known number of transactions
-            46058,    // * total number of transactions between genesis and that timestamp
+            72698,    // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the SetBestChain debug.log lines)
             0 // * 0 -  estimated number of transactions per second after that timestamp
         };
