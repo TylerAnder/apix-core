@@ -78,7 +78,7 @@ public:
         strNetworkID = "main";
         consensus.nSubsidyHalvingInterval = 500000;
         consensus.BIP16Height = 1; // fixed
-        consensus.BIP34Height = 1;
+        consensus.BIP34Height = 0;
         consensus.BIP34Hash = uint256S("0x00000c11d8beef40deecddc99e42547ba123c146123978afdf35ab2869d1ab09"); // 0
         consensus.BIP65Height = 1;
         consensus.BIP66Height = 1;
@@ -212,8 +212,8 @@ public:
 
         genesis = CreateGenesisBlock(1507032223, 238202, 0x1e3fffff, 1, 10 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0xb235a7623e9f48a3f0b8e9011a6db351a4a8db948b588d54c893399314d2f758"));
-        assert(genesis.hashMerkleRoot == uint256S("0x92874e7221a12cedde2a7335f733ee03f79694355cda3e383d3f531e3cf9672a"));
+    //    assert(consensus.hashGenesisBlock == uint256S("0xb235a7623e9f48a3f0b8e9011a6db351a4a8db948b588d54c893399314d2f758"));
+    //    assert(genesis.hashMerkleRoot == uint256S("0x92874e7221a12cedde2a7335f733ee03f79694355cda3e383d3f531e3cf9672a"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
